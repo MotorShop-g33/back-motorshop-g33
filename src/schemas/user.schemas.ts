@@ -21,20 +21,20 @@ export const newUserSchema: SchemaOf<IUserRequest> = yup.object().shape({
 });
 
 export const updateUserSchema: SchemaOf<IUserUpdate> = yup.object().shape({
-    name: yup.string().min(2).max(100).required(),
-    email: yup.string().email().max(100).required(),
-    password: yup.string().max(100).required(),
-    cpf: yup.string().max(20).required(),
-    phone: yup.string().max(20).required(),
-    birthday: yup.date().max(10).required(),
-    description: yup.string().max(280).required(),
-    cep: yup.string().max(10).required(),
-    state: yup.string().max(20).required(),
-    city: yup.string().max(100).required(),
-    street: yup.string().max(140).required(),
-    number: yup.string().max(5).required(),
+    name: yup.string().min(2).max(100),
+    email: yup.string().email().max(100),
+    password: yup.string().max(100),
+    cpf: yup.string().max(20),
+    phone: yup.string().max(20),
+    birthday: yup.date().max(10),
+    description: yup.string().max(280),
+    cep: yup.string().max(10),
+    state: yup.string().max(20),
+    city: yup.string().max(100),
+    street: yup.string().max(140),
+    number: yup.string().max(5),
     complement: yup.string().max(20).nullable(),
-    isStaff: yup.boolean().required()
+    isStaff: yup.boolean()
 });
 
 export const userResponseSchema: SchemaOf<IUser> = yup.object().shape({

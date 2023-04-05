@@ -6,8 +6,8 @@ import { hashSync } from "bcrypt";
 
 const updateUserService = async (userId:string, userInfo: IUserUpdate) => {
     const userRepo = AppDataSource.getRepository(User);
-    if(userInfo["password"]){userInfo["password"] = hashSync(userInfo["password"], 10);}
-    if(userInfo["birthday"]){userInfo["birthday"] = new Date(userInfo["birthday"]);}
+    if(userInfo.password){userInfo.password = hashSync(userInfo.password, 10);}
+    if(userInfo.birthday){userInfo.birthday = new Date(userInfo.birthday);}
     const userData = await userRepo.findOneBy({id: userId});
     const updateUser = userRepo.create({
         ...userData,
