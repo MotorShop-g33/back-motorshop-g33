@@ -1,7 +1,7 @@
 import { DataSource } from "typeorm";
 import path from "path";
 import "dotenv/config";
-import { createUsersTable1671032457673 } from "./migrations/1671032457673-createUsersTable";
+import { FirstMigration1680700322741 } from "./migrations/1680700322741-FirstMigration"
 import { User } from "./entities/user.entity";
 
 const AppDataSource = new DataSource(
@@ -22,7 +22,7 @@ const AppDataSource = new DataSource(
         logging: true,
         synchronize: false,
         entities: [User],
-        migrations: [createUsersTable1671032457673],
+        migrations: [FirstMigration1680700322741],
       }
 );
 
